@@ -222,6 +222,8 @@ for cls_id, conf, box in zip(detections.class_id, detections.confidence, detecti
 
 ### 致谢
 
+本仓库由 **Song Yuexin** 及合作者 **Dai Lukang**（`dailukang1800@163.com`）、**Xu Xinqi**（`xuxinqi269@gmail.com`）共同维护与开发。  
+
 本工作构建在以下优秀开源项目之上：
 
 - [RF-DETR](https://github.com/roboflow/rf-detr)
