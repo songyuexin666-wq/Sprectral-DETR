@@ -24,6 +24,10 @@
 
 **Spectral-DETR** 针对上述问题，从 **特征、Query 和定位** 三个阶段同时改进 RF-DETR：
 
+![Dataset and inference overview](figures/dataset_distribution.png)
+
+> 上图：左列为自建 Mine-Objects 数据集代表场景，中列为 ScienceDB Mine，右列为 ExDark 低照度场景。
+
 - **FAFD（Frequency-Aware Feature Disentanglement）**  
   在 Transformer 编码前对多尺度特征做 2D FFT；利用退化条件驱动的频域门控削弱噪声主导频段，保留结构语义，再通过残差方式与原特征融合，减轻谱混叠与伪边缘。
 
@@ -33,6 +37,10 @@
 
 - **LUE（Localization Uncertainty Estimation）**  
   对每个框预测坐标均值与 log-variance，用不确定性自适应加权定位梯度，并对预测不确定性与真实误差做校准。输出可解释的“每框可靠性”指标，便于安全场景下的人工复核与告警策略。
+
+![Qualitative comparison of baseline vs. Spectral-DETR](figures/qualitative_comparison.png)
+
+> 上图：从上到下分别为输入图像、基线 RF-DETR 结果、Spectral-DETR 结果。可以看到在粉尘、低照和模糊场景下，Spectral-DETR 能够更稳定地检测弱目标并给出更准确的边界。
 
 ---
 
